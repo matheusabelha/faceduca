@@ -1,0 +1,174 @@
+\pagestyle{empty}
+
+% Capa
+\begin{center}
+\begin{tikzpicture}[remember picture,overlay]
+
+    % Proporção áurea
+    %\pgfmathsetmacro{\goldenheight}{\paperwidth / \goldenratio}
+    %\pgfmathsetmacro{\goldenwidth}{\paperwidth}
+
+    % Fundo preto
+    \fill[bgColor] (current page.south west) rectangle (current page.north east);
+    % \fill[background] (current page.south west) rectangle (current page.north east);
+    
+    % Autor
+    \node[white, font=\Huge, anchor=north, text width =\linewidth, align = center] (author) at ([yshift=-44pt] current page.north) {\textcolor{customgold}{\scshape\large\authorname}};
+
+    % Título
+    \node[mainColor, font=\Large, anchor=north, text width =0.9\linewidth, align = center, below=4pt of author.south] (title) {\scshape\Huge Apostila de \\ Matemática Básica};
+
+    % Subtítulo
+    \ifx\subtitle\undefined\else\if\relax\detokenize\expandafter{\subtitle}\relax\else
+    {\node[white, font=\Large, text width =\linewidth, align = center, anchor=north, below=8pt of title.south] {\textcolor{gray!60}{\scshape\large\subtitle}};}
+    \fi\fi
+
+
+    %%DESENHOS NA CAPA
+    
+    %COLMEIA DO FUNDO
+    \begin{scope}[shift={(current page.center)}, scale=1]
+
+    \def\Rbg{0.65}
+    \def\xstepbg{1.5*\Rbg}
+    \def\ystepbg{sqrt(3)*\Rbg}
+
+    \foreach \i in {-12,...,12} {
+        \foreach \j in {-4,...,4} {
+
+        \pgfmathsetmacro{\x}{\i * \xstepbg}
+        \pgfmathsetmacro{\y}{\j * \ystepbg + mod(\i,2)*\ystepbg/2}
+
+        \begin{scope}[shift={(\x,\y)}]
+            \filldraw[fill=gray!5, draw=gray!60, line width=0.3pt, fill opacity=0.05]
+            (0:\Rbg) \foreach \a in {60,120,...,300} { -- (\a:\Rbg) } -- cycle;
+        \end{scope}
+        }
+    }
+
+    \end{scope}
+
+    % COLMEIA DA FRENTE
+    \begin{scope}[shift={(current page.center)}, scale=1]
+
+    \def\R{0.8}
+    \def\xstep{1.5*\R}
+    \def\ystep{sqrt(3)*\R}
+
+    % Mapeamento de índices para símbolos
+    \newcommand{\getsymbol}[1]{%
+    \ifcase#1 \alpha%
+    \or \beta%
+    \or \gamma%
+    \or \delta%
+    \or \epsilon%
+    \or \lambda%
+    \or \mu%
+    \or \pi%
+    \or \sigma%
+    \or \theta%
+    \or \omega%
+    \or \land%
+    \or \lor%
+    \or \neg%
+    \or \Rightarrow%
+    \or \Leftrightarrow%
+    \or e%
+    \or \phi%
+    \or \infty%
+    \else \relax \fi%
+    }   
+
+    \foreach \i in {-10,...,10} {
+        \foreach \j in {-2,...,2} {
+
+      \pgfmathsetmacro{\x}{\i * \xstep}
+      \pgfmathsetmacro{\y}{\j * \ystep + mod(\i,2)*\ystep/2}
+
+      % Define se o hexágono é dourado (~35%)
+      \pgfmathtruncatemacro{\isdourado}{(mod(\i+\j,3)==0 || mod(\i*2+\j,7)==0) ? 1 : 0}
+
+      \ifnum\isdourado=1
+        % \def\fillcolor{customgold}
+        \def\fillcolor{accentColor}
+        \def\drawcolor{mainColor}
+        \colorlet{symbolcolor}{white}
+        \pgfmathtruncatemacro{\symindex}{mod(\i*7 + \j*5, 20)} % 20 símbolos
+      \else
+        \def\fillcolor{teste}
+        \def\drawcolor{mainColor}
+      \fi
+
+      \begin{scope}[shift={(\x,\y)}]
+        \filldraw[fill=\fillcolor, draw=\drawcolor, thick]
+          (0:\R) \foreach \a in {60,120,...,300} { -- (\a:\R) } -- cycle;
+
+        % Adiciona símbolo se for dourado
+        \ifnum\isdourado=1
+        \pgfmathtruncatemacro{\angle}{mod(\i*7+\j*11, 10)-5}
+        % \pgfmathtruncatemacro{\angle}{mod(\i*11+\j*17, 20)-10}
+        \edef\symbolcontent{\getsymbol{\symindex}}
+        \node[rotate=\angle, text=mainColor] at (0,0) {\Large$\symbolcontent$};
+        \fi
+      \end{scope}
+        }
+    }
+
+    \end{scope}
+
+    % Editora
+    \node[white, font=\Huge, anchor=south] (publisher) at ([yshift=32pt] current page.south) {\textcolor{mainColor}{\scshape\large\publisher}};
+
+    % Logotipo da editora
+    \node[anchor=north, above=4pt of publisher.north] {\includegraphics[width=0.2\textwidth]{frontmatter/logoFACEDUCA_escuro.png}};
+
+    % Outras informações
+    \ifx\translatorname\undefined
+    \else
+        \if\relax\detokenize\expandafter{\translatorname}\relax
+        \else{   
+            %\node[white, font=\Large, anchor=north, above=114pt of publisher.north] (translatedBy) {\textcolor{gray}{\itshape\large{Tradução por}}};
+            
+            %\node[white, font=\Large, anchor=south, below=2pt of translatedBy.south] (translatorAuthor) {\textcolor{lightgray}{\itshape\large\translatorname}};       
+            }
+        \fi
+    \fi        
+\end{tikzpicture}
+\end{center}
+
+\cleardoublepage
+
+% Página de título (contra-capa)
+\begin{titlepage}
+	\centering
+	\newgeometry{top=1in,bottom=1in,right=0in,left=0in}
+    \thispagestyle{empty}
+	~	
+    % Autor
+	\vspace{24pt}
+	{\scshape\large \authorname\par}
+
+    % Título
+	\vspace{6pt}
+	{\scshape\LARGE \booktitle\par}
+
+    % Subtítulo
+    \ifx\subtitle\undefined\else\if\relax\detokenize\expandafter{\subtitle}\relax\else
+    {\vspace{6pt}
+	{\scshape\large \subtitle\par}
+ 
+	\vspace{\stretch{1.25}}}
+    \fi\fi
+    
+    % Quem fez a tradução
+    \ifx\translatorname\undefined\else\if\relax\detokenize\expandafter{\translatorname}\relax\else
+    {{\itshape\large{Revisado por}\par}
+	\vspace{6pt}
+
+    {\itshape\Large\translatorname\par}}
+    \fi\fi
+
+    % Editora
+    \vspace{\stretch{6}}
+	{\Huge\scshape\large\publisher\par}
+\end{titlepage}

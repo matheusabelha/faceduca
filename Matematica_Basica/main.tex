@@ -1,0 +1,100 @@
+% Caraumã book template by @jndgomes
+% 2024 (c) Janderson Gomes
+% See more <artientista.blogspot.com> or <carauman.blogspot.com>
+
+% paper size is in preamble.sty
+\documentclass[12pt,openany]{book} 
+
+% Definindo proporção áurea
+\newcommand{\goldenratio}{1.618}
+
+% Codificação de entrada e saída
+\usepackage[T1]{fontenc}
+
+% Informações do livro
+\newcommand{\authorname}{Matheus Abelha}
+\newcommand{\translatorname}{Adriel Ferreira\\Lorena Almeida}
+\newcommand{\booktitle}{Apostila de Matemática Básica}
+\newcommand{\subtitle}{Uma abordagem prática}
+\newcommand{\publisher}{FACE Educa}
+\newcommand{\editionyear}{2026}
+\newcommand{\isbn}{}
+\title{\booktitle}
+\author{\authorname}
+
+% Pacotes adicionais
+\usepackage{hyperref}
+\hypersetup{pdfborder=0 0 0}
+\usepackage{misc/options}
+\usepackage{lmodern}
+\usepackage{colortbl}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{float}	
+\usepackage{tcolorbox}
+\usepackage[framemethod=default]{mdframed}
+\usepackage{bbm}
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage{xlop}
+\usepackage{tikz}
+\usetikzlibrary{matrix, fit, shapes.geometric, calc}
+
+
+\begin{document}
+
+% Front matter
+\frontmatter
+\input{frontmatter/titlepage}      % Página de título
+\input{frontmatter/copyrightpage}  % Página de direitos autorais
+\input{frontmatter/preface}        % Prefácio
+\input{frontmatter/tocpage}        % Sumário
+
+% Main matter
+\mainmatter
+\pagestyle{fancy}                  % Estilo de página fancy para o conteúdo principal
+
+%Definições para o MDFRAME
+
+
+\newcounter{exemplo}[section]
+\renewcommand{\theexemplo}{\thesection.\arabic{exemplo}}
+
+\newenvironment{exemplo}[1][]{
+  \refstepcounter{exemplo}
+  \begin{mdframed}[
+    outerlinewidth = 2,
+    roundcorner = 10pt,
+    leftmargin = 40,
+    rightmargin = 40,
+    backgroundcolor = yellow!40,
+    outerlinecolor = blue!70!black,
+    innertopmargin = \topskip,
+    splittopskip = \topskip
+  ]
+  \textbf{Exemplo~\theexemplo}
+  \if\relax\detokenize{#1}\relax\else\space(#1)\fi
+  \par\medskip
+  \normalfont
+}{
+  \end{mdframed}
+}
+% \newmdtheoremenv[outerlinewidth = 2, roundcorner=10pt, leftmargin = 40, rightmargin = 40, backgroundcolor = yellow!40, outerlinecolor = blue !70! black, innertopmargin = \topskip, splittopskip = \topskip, ntheorem = true]{exemplo}{Exemplo}[section]
+
+% Conteúdo dos capítulos
+\input{content/chapter1}           % Capítulo 1
+
+\input{content/chapter2}           % Capítulo 2
+
+\input{content/chapter3}           % Capítulo 3
+
+\input{content/chapter4}           % Capítulo 4
+
+\input{content/chapter5}
+
+%\input{content/geometria}
+
+% Back matter
+\backmatter
+\input{frontmatter/backpage}       % Página final (contracapa)
+
+\end{document}

@@ -1,0 +1,1590 @@
+%Capítulo 4
+\chapter{Ferramentas matemáticas úteis} 
+\label{cap4}
+
+\newpage
+\section{Critérios de Divisibilidade}
+Como vimos no capítulo de divisão, as vezes temos divisões ``exatas'' - com resto zero - e outras vezes divisões que deixam algum resto diferente de zero, ``não exatas'', sendo que nesse último caso podemos deixar o número em forma de fração ou decimal.
+
+Nesse capítulo queremos avaliar quais são as características e critérios para que um número seja \textbf{divisível} por outro. E aqui apresentamos o conceito de ``divisível'', que grosseiramente significa que ocorrerá uma divisão ``exata''.
+
+\begin{tcolorbox}[title = IMPORTANTE ]
+    A princípio, \textbf{não podemos} usar esses critérios de divisibilidade em números \textbf{decimais e frações}.
+\end{tcolorbox}
+
+\subsection{O que é ser um múltiplo?}
+Antes de entender o que é ser divisível, primeiro temos que entender o que é ser \textbf{múltiplo de um número}. É um conceito relativamente simples e fácil se entendemos bem o capítulo de multiplicação. 
+
+Dizemos que um número (A) é múltiplo de outro (B) quando ele pode ser escrito como uma multiplicação de B por uma certa quantidade (C). Vejamos com um exemplo para ficar mais claro.
+
+\begin{exemplo}
+    Considere o número 64, ele é múltiplo de 2?\\
+
+    Perceba que 64 pode ser escrito como \(2\times2\times2\times2\times2\times2\), ou \(32\times2\). Dessa forma, 64 (A) é o número 2 (B) multiplicado por 32 (C).\\
+
+    Portanto, \textbf{64 é múltiplo de 2}.
+\end{exemplo}
+
+\begin{exemplo}
+    Considere o número 33, ele é múltiplo de 3?\\
+
+    Como 33 pode ser escrito como \(3\times11\), temos que 33 (A) é o número 3 (B) multiplicado por 11 (C).\\
+
+    Portanto, \textbf{33 é múltiplo de 3}.
+\end{exemplo}
+
+Porém, se você é um aluno atento e curioso, poderia se perguntar o seguinte: \textit{eu li em uma linda apostila de matemática básica que multiplicação tem propriedade comutativa, pois \(A=B\times C = C\times B\). Então eu também posso dizer que A é múltiplo de C, multiplicado por uma quantia B. Né?}. 
+
+O que seria admirável, porém estranho, então tenha cuidado para não se perder em reflexões e introspecções numéricas, e acabar se apaixonando pela matemática, pois é um caminho sem volta.
+
+Mas de fato você estaria certo. Veja nos dois últimos exemplos que estudamos. Sem problema algum, podemos afirmar que \textbf{64 é múltiplo de 32}, por uma quantidade 2. Da mesma forma \textbf{33 é múltiplo de 11}, por uma quantidade 3.
+
+Ou seja, 32 e 2 compartilham o mesmo múltiplo, que é 64. Da mesma forma que 11 e 3 compartilham o mesmo múltiplo, 33. É como se eles tivessem \textit{\textbf{múltiplos em comum}}... \textit{que surpresa}. Veremos isso com mais calma e profundidade no capítulo de \textbf{Mínimo Múltiplo Comum}.
+
+Por enquanto, para o capítulo de \textbf{divisibilidade}, estamos interessados em saber se os números de 0 a 9 são múltiplos ou não dos números de... 0 a 9. Isso vai fazer mais sentido no exemplo a seguir.
+
+\begin{exemplo}
+    Considere o \textbf{número 2}, quais são seus múltiplos entre 0 e 9?
+
+    \begin{itemize}
+        \item 2 é múltiplo de 2, pois \(2=2\times1\);
+        \item 4 é múltiplo de 2, pois \(4=2\times2\);
+        \item 6 é múltiplo de 2, pois \(6=2\times3\);
+        \item 8 é múltiplo de 2, pois \(8=2\times4\).
+    \end{itemize}
+
+    E esses são os múltiplos de 2 maiores que zero e menores do que 10.
+\end{exemplo}
+
+\begin{exemplo}
+    Considere o \textbf{número 3}, quais são seus múltiplos entre 0 e 9?
+
+    \begin{itemize}
+        \item 3 é múltiplo de 3, pois \(3=3\times1\);
+        \item 6 é múltiplo de 3, pois \(6=3\times2\);
+        \item 9 é múltiplo de 3, pois \(9=3\times3\).
+    \end{itemize}
+
+    E esses são os múltiplos de três maiores que zero e menores do que 10.
+\end{exemplo}
+
+\begin{exemplo}
+    Considere o \textbf{número 4}, quais são seus múltiplos entre 0 e 9?
+
+    \begin{itemize}
+        \item 4 é múltiplo de 4, pois \(4=4\times1\);
+        \item 8 é múltiplo de 4, pois \(8=4\times2\);
+    \end{itemize}
+
+    E esses são os múltiplos de 4 maiores que zero e menores do que 10.
+\end{exemplo}
+
+E então deixo o \textit{desafio} para você, jovem gafanhoto, encontre os múltiplos de 5, 6, 7, 8 e 9, que são maiores do que zero e menores do que 10.
+
+\begin{tcolorbox}[title = IMPORTANTE]
+    O número \textbf{zero} é múltiplo de todos os números, pois qualquer número multiplicado por 0 é igual a 0. Mas ele é um múltiplo simples e chato, então não costumamos escrever ele quando estamos procurando múltiplos de algum número.
+\end{tcolorbox}
+
+
+\subsection{Divisibilidade por 2}
+
+Um número ser divisível por 2 significa que, dividindo esse número por 2, temos um resto zero na divisão. Mas como podemos avaliar se um determinado número é divisível por 2 sem de fato realizar a conta de divisão?
+
+Para isso, basta observar se o número a ser divido tem o \textbf{último algarismo} igual a \textbf{0, 2, 4, 6 ou 8} - ou seja, se o número for \textbf{par}, ele é divisível por 2.
+
+\begin{tcolorbox}[title=IMPORTANTE]
+    O que faz um número ser \textbf{par} ou \textbf{ímpar}? Simplesmente o fato dele ser ou não divisível/múltiplo de dois. Em outras palavras, se o número terminar (tiver o último algarismo igual) em \textbf{0, 2, 4, 6 ou 8} ele é \textbf{par}, se \textbf{terminar em 1, 3, 5, 7 ou 9} ele é \textbf{ímpar}.
+\end{tcolorbox}
+
+\begin{exemplo}
+    Indique se 2456 é divisível por 2. \\
+
+    O número 2456 tem o último algarismo igual a 6, portanto par e logo atende os critérios de divisibilidade por 2. Portanto, se nós dividirmos 2456 por 2 teremos uma divisão exata e resto zero.
+\end{exemplo}
+
+O critério de divisibilidade por 2 pode parecer bobo a princípio, mas os demais ficam mais interessantes. Vejamos mais um exemplo.
+
+\begin{exemplo}
+    Indique se 345 é divisível por 2. \\
+
+    O número 345 tem como último algarismo o número 5, portanto é ímpar e logo \textbf{não atende} aos critérios de divisibilidade por 2. Portanto, \textbf{345 não é divisível por 2}.\\
+
+    \textcolor{red}{Observação.:} 345 é um número ímpar. Números ímpares, aqueles terminados em 1, 3, 5, 7 ou 9 não são divisíveis por 2.    
+\end{exemplo}
+
+\subsection{Divisibilidade por 3}
+Novamente, um número ser divisível por 3 significa que teremos uma divisão exata e com resto zero. 
+
+O critério de divisibilidade por 3 é o seguinte: \textbf{a soma dos seus algarismos deve ser divisível por 3}. Mas como assim?
+
+\begin{exemplo}
+    Considere a divisão de 81 por 3. \\
+
+    O número 81 é composto pelos algarismos 8 e 1. Somando os seus algarismos, temos: \(8+1=9\). Agora, verificamos se essa soma é divisível por 3. Como \textbf{9 é múltiplo de 3}, logo ele é divisível por 3.\\
+
+    Portanto, \textbf{81 é divisível por 3}.
+\end{exemplo}
+
+\begin{tcolorbox}[title = IMPORTANTE]
+    No último exemplo percebemos uma coisa interessante. Se um certo número \textbf{A é múltiplo de outro número B}, então \textbf{A será divisível por B}. 
+\end{tcolorbox}
+
+Vejamos outro exemplo de divisibilidade por 3.
+
+\begin{exemplo}
+    Considere a divisão de 54 por 3.\\
+
+    O número 54 é composto pelos algarismos 4 e 5. Realizando a soma, temos: \(4+5=9\). Essa soma é divisível por 3. 
+
+    Portanto, \textbf{54 é divisível por 3}.
+\end{exemplo}
+
+\begin{exemplo}
+    Considere a divisão de 17 por 3.\\
+
+    O número 17 é composto pelos algorismos 1 e 7. Realizando a soma, temos: \(1+7=8\). O número 8 não é divisível por 3.
+
+    Portanto, \textbf{17 não é divisível por 3}.
+\end{exemplo}
+
+E quando a soma dos algarismos dá maior do que 9, o que devemos fazer?
+
+\begin{exemplo}
+    Considere a divisão de 2469 por 3.\\
+
+    O número 2459 é composto pelos algarismos 2, 4, 6 e 9. Realizando a soma, temos: \(2+4+6+9=21\). \\
+    
+    Mas será que 21 é divisível por 3?\\
+
+    O número 21 é composto por 1 e 2, realizando a soma temos: \(1+2=3\), e 3 é divisível por 3. \\
+    
+    Então 21 também é divisível por 3. Logo, \textbf{2459} também \textbf{é divisível por 3}.
+\end{exemplo}
+
+E quanto maior for o número, maior vai ser a quantidade de somas dos algarismos que teremos que realizar antes de descobrir se aquele número é divisível por 3 ou não.
+
+\subsection{Divisibilidade por 4}
+Para alguns números, os critérios de divisibilidade só começam a valer a pena quando temos números relativamente grandes. O número 4 começa a tocar essa barreira de praticidade.
+
+\textbf{Para um número ser divisível por 4 é necessário que seus dois últimos algarismos sejam 00 ou divisíveis por 4}. 
+
+\begin{exemplo}
+    Considere a divisão de 2700 por 4.\\
+
+    Começamos com um exemplo tranquilo, pois 2700 tem os dois últimos algarismos iguais a \textbf{00}. Então, \textbf{2700 é divisível por 4}.
+\end{exemplo}
+
+Para o caso do número terminar em 00 fica fácil de observarmos que ele é divisível por 4, mas para o segundo caso de verificar se os dois últimos algarismos são divisíveis por 4 ou não, só vale a pena para números maiores do que 100, por exemplo.
+
+Por exemplo, se quiséssemos saber se 44 é divisível por 4 ou não, teríamos que primeiro descobrir se ele é múltiplo de 4, pois os dois últimos algarismos de 44 são exatamente os únicos algarismos que ele possui. Nesse caso fica fácil de ver que seria só multiplicar 4 por 11, então 44 é um múltiplo de 4, logo divisível por 4.
+
+\begin{exemplo}
+    Considere a divisão de 23564 por 4.\\
+
+    Nesse caso, temos que avaliar os dois últimos algarismos de 235\textbf{64}, ou seja, 64. Esse número é divisível por 4? \\
+
+    Lembrando que, no caso do número 4, quando temos números menores do que 100 temos que descobrir pela maneira do múltiplo. Podemos escrever \(64=4\times16\), então 64 é múltiplo de 4, e portanto divisível por 4.
+
+    Portanto, \textbf{23564 é divisível por 4}.\\
+\end{exemplo}
+
+\begin{exemplo}
+    Considere a divisão de 233 por 4.\\
+
+    O número 233 tem como 33 os dois últimos algarismos. 33 não é múltiplo de 4, ou seja, também não é divisível por 4.
+
+    Portanto, \textbf{233 não é divisível por 4}.
+\end{exemplo}
+
+\subsection{Divisibilidade por 5}
+No caso do número 5 os critérios de divisibilidade voltam a ficar tranquilos. Talvez o segundo mais fácil de todos, quem sabe até o primeiro.
+
+\textbf{Um número será divisível por 5 quando o último algarismo - o algarismo da unidade - for igual a 0 ou 5.}
+
+\begin{exemplo}
+    Considere a divisão de 435 por 5.\\
+
+    O número 435 tem o último algarismo igual a 5. Logo, atende o critério de divisibilidade.
+
+    Portanto, \textbf{435 é divisível por 5}.
+\end{exemplo}
+
+\begin{exemplo}
+    Considere a divisão de 112358130 por 5.\\
+
+    O número 112358130 tem o último algarismo igual a 0. Logo, atende o critério de divisibilidade.
+
+    Portanto, \textbf{112358130 é divisível por 5}.
+\end{exemplo}
+
+\subsection{Divisibilidade por 6}
+
+\textbf{Para que um número seja divisível por 6 é necessário que ele seja ao mesmo tempo divisível por 2 e por 3.}
+
+Não temos nenhuma novidade aqui, só devemos garantir que ele seja tanto divisível por 2 e por 3, usando os critérios de divisibilidade que vimos para esses números.
+
+\begin{exemplo}
+    Considere a divisão de 36 por 6.\\
+
+    Primeiro, é tranquilo de ver que 36 é um múltiplo de 6, pois ele está lá na tabuada do 6. Então, já sabemos que 36 é divisível por 6, mas vamos fingir que não.
+
+    \begin{itemize}
+        \item \textbf{É divisível por 2?}\\
+        O número 36 é terminado em 6, que é um número par, logo ele \textbf{é divisível por 2}.
+
+        \item \textbf{É divisível por 3?}\\
+        A soma dos algarismos de 36 é \(3+6=9\), e 9 é um número divisível por 3. Logo, 36 \textbf{é divisível por 3}.
+    \end{itemize}
+
+    O \textbf{número 36} sendo divisível por 2 e por 3, então \textbf{também será divisível por 6}.
+\end{exemplo}
+
+\begin{exemplo}
+    Considere a divisão de 2640 por 6.\\
+
+    \begin{itemize}
+        \item \textbf{É divisível por 2?}\\
+        O número 2640 tem o último algarismo igual a 0, portanto é um número par. Logo, ele \textbf{é divisível por 2}.
+
+        \item \textbf{É divisível por 3?}\\
+        A soma dos algarismos de 2640 é \(2+6+4+0=12\), e 12 é um número divisível por 3, pois \(1+2=3\). Então, 2640 \textbf{é divisível por 3}.
+    \end{itemize}
+
+    Novamente, sendo divisível por 2 e por 3, o número \textbf{2640 também é divisível por 6}.
+\end{exemplo}
+
+\subsection{Divisibilidade por 7}
+
+Agora no número 7, o critério de divisibilidade vai parecer um passo de mágica, algo tirado da cartola e sem fundamento. Muitas vezes é até mais fácil dividir o número por 7 na prática para verificar se tem resto zero, ao invés de seguir o critério a seguir.
+
+\textbf{Para saber se um número é divisível por 7 siga os seguintes passos:}
+
+\begin{enumerate}
+    \item \textbf{Separe o último algarismo do número};
+    \item \textbf{Multiplique esse algarismo por 2};
+    \item \textbf{Subtraia o valor encontrado no passo 2 do restante do número};
+    \item \textbf{Verifique se o resultado é divisível por 7}.\\
+    
+    \textbf{Se não souber se o número encontrado é divisível por 7, repita todo o procedimento com o último número encontrado.}
+\end{enumerate}
+
+Convenhamos, é um critério de divisibilidade que beira a loucura e magia. Mas vejamos um exemplo de como utilizar.
+
+\begin{exemplo}
+    Considere a divisão de 2401 por 7.
+
+    \begin{enumerate}
+        \item Separando o último algarismo do número:\\
+        2401 se torna 240 e \textbf{1}.
+        \item Multiplicando esse algarismo por 2:\\
+        Multiplicando \textbf{1} por 2, tem-se \textbf{2}.
+        \item Subtraindo o valor encontrado, \textbf{2}, do restante do número, \textbf{240}:\\
+        \(240-2=238\).
+        \item Verificando se o resultado é divisível por 7:\\
+        O número 238 é divisível por 7? Não sabemos >:(\\
+
+        Então, temos que realizar o procedimento novamente, utilizando agora o \textbf{238}.
+
+        \begin{itemize}
+            \item $238 = 23 \text{ e } \textbf{8}.$
+            \item $2\times8 = \textbf{16}$.
+            \item $23 -16=\textbf{7}$
+            \item \textbf{7} é divisível por 7? SIM!!
+        \end{itemize}
+
+        Então, 238 também é divisível por 7. Logo, \textbf{2401} também \textbf{é divisível por 7}.
+    \end{enumerate}
+\end{exemplo}
+
+Nesse exemplo anterior, teríamos gastado menos tempo realizando a divisão de 2401 por 7 do que seguindo o critério de divisibilidade. Então fica a critério do aluno escolher qual método achar mais fácil.
+
+\subsection{Divisibilidade por 8}
+
+\textbf{Um número será divisível por 8 quando os seus três últimos algarismos formarem um número divisível por 8}. Esse critério de divisibilidade só é útil para números muitos grandes.
+
+\begin{exemplo}
+    Considere a divisão de 254064 por 8.\\
+
+    Aqui foi escolhido um número com os três últimos algarismos iguais a 064 propositalmente.\\
+    
+    Podemos considerar 064 como a mesma coisa que 64 - novamente o nosso querido zero à esquerda. E daí temos que avaliar se 64 é múltiplo de 8, o que podemos ver que é verdade se lembrarmos da tabuada do 8.
+
+    Portanto, \textbf{254064 é divisível por 8}.
+\end{exemplo}
+
+\subsection{Divisibilidade por 9}
+\textbf{Um número é divisível por 9 se a soma dos algarismos que formam o número for divisível por 9}. O critério de divisibilidade por 9 é similar ao critério do número 3. 
+
+\begin{exemplo}
+    Considere a divisão de 81 por 9.\\
+
+    A soma dos algarismos de 81 é \(8+1=9\), que é um número divisível por 9. 
+
+    Portanto, \textbf{81 é divisível por 9}.
+\end{exemplo}
+
+\begin{exemplo}
+    Considere a divisão de 4599 por 9.\\
+
+    A soma dos algarismos de 4599 é \(4+5+9+9=27\). A soma dos algarismos de 27 é \(2+7=9\), que é um número divisível por 9. Ou você também poderia lembrar que 27 é um múltiplo de 9, consultando na tabuada. 
+
+    Portanto, \textbf{4599 é divisível por 9}.
+\end{exemplo}
+
+Importante ressaltar que, se a soma dos algarismos der um número divisível por 3 \textbf{não necessariamente} ele também será divisível por 9. Então muita atenção na hora de avaliar os critérios.
+
+\subsection{Divisibilidade por 10}
+
+\textbf{Um número é divisível por 10 se seu último algarismo é igual a 0}. Esse critério de divisibilidade está concorrendo ao primeiro lugar de facilidade junto com o do número 5.
+
+\begin{exemplo}
+    Considere a divisão de 1560 por 10.\\
+
+    O último algarismo de 1560 é 0, logo ele \textbf{é divisível por 10}. Simples assim.
+\end{exemplo}
+
+Uma maneira mais ``elegante'' de pensar nesse critério seria imaginar que todo número terminado em 0 é um múltiplo de 10, inclusive o próprio 0.
+
+
+\newpage
+\section{Mínimo Múltiplo Comum} \label{MMC}
+Como vimos no capítulo de ``O que é ser um múltiplo?'', dentro de ``Critérios de Divisibilidade'', sabemos que o múltiplo de dois números é o resultado da multiplicação desses números entre si. Lembrando: se $A\times B=C$, C será múltiplo comum de A e B.
+
+Mas será que esses dois números terão somente \textbf{um} múltiplo em comum? Nesse capítulo queremos entender melhor o que é ser um múltiplo em comum e como encontrá-lo entre dois ou mais números, mais especificamente sendo o \textbf{menor} possível.
+
+Primeiro, vamos entender como encontrar os múltiplos comuns entre dois números.
+
+\begin{exemplo}
+    Encontre alguns múltiplos comuns dos números 2 e 3.\\
+
+    Vamos ignorar o zero, pois ele é um múltiplo sem graça.
+    
+    \begin{itemize}
+        \item Múltiplos de 2:
+
+        2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36 ... e poderíamos seguir isso infinitamente.
+
+        \item Múltiplos de 3:
+
+        3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54 ... infinitamente.
+    \end{itemize}
+
+    A tarefa é: \textbf{quais números são múltiplos de 2 e que também são de 3}?
+    \begin{itemize}
+    
+        \item Múltiplos de 2:
+
+        2, 4, \textcolor{red}{\textbf{6}}, 8, 10,\textcolor{red}{\textbf{12}}, 14, 16,\textcolor{red}{\textbf{18}}, 20, 22, \textcolor{red}{\textbf{24}}, 26, 28, \textcolor{red}{\textbf{30}}, 32, 34, \textcolor{red}{\textbf{36}} ... etc.
+
+        \item Múltiplos de 3:
+
+        3, \textcolor{red}{\textbf{6}}, 9, \textcolor{red}{\textbf{12}}, 15, \textcolor{red}{\textbf{18}}, 21, \textcolor{red}{\textbf{24}}, 27, \textcolor{red}{\textbf{30}}, 33, \textcolor{red}{\textbf{36}},39, 42, 45, 48, 51, 54 ... etc.
+    \end{itemize}
+
+    Então dizemos que os \textbf{múltiplos comuns} de 2 e 3 são: 6, 12, 18, 24, 30, 36, ... e poderíamos continuar adicionando até infinito.\\
+
+    \textbf{PORÉM}, queremos o \textbf{\textcolor{red}{Mínimo} Múltiplo Comum}. Então, basta pegar o menor número dentre os que são múltiplos comuns de 2 e 3.\\
+
+    Dessa forma, podemos dizer que o Mínimo Múltiplo Comum (MMC) de 2 e 3 é \textbf{6}. Uma outro jeito de dizer isso seria:
+
+    \begin{equation}
+        MMC(2,3)=6
+    \end{equation}
+\end{exemplo}
+
+Perceba então que o método mais básico para encontrar o mínimo múltiplo comum entre números é: escrever vários múltiplos de cada número, identificar os que são comuns entre eles e então escolher o menor. Ou simplesmente escolher o primeiro que aparecer.
+
+\begin{exemplo}
+    Encontre o MMC de 3 e 4.\\
+
+    \begin{itemize}
+        \item \textbf{Múltiplos de 3:} 
+        3, 6, 9, \textbf{12}, 15, 18, 21 ...
+        \item \textbf{Múltiplos de 4:} 
+        4, 8, \textbf{12}, 16, 20...
+    \end{itemize}
+
+    Então, o menor número que é múltiplo tanto de 3 quanto de 4 seria o número 12.
+
+    \begin{equation}
+        MMC(3,4)=12
+    \end{equation}
+\end{exemplo}
+
+Um exemplo um pouco mais interessante:
+
+\begin{exemplo}
+    Encontre o MMC entre 3 e 6.
+
+    \begin{itemize}
+        \item \textbf{Múltiplos de 3:} 3, 6, 9, 12 ...
+        \item \textbf{Múltiplos de 6:} 6, 12, 18, 24 ...
+    \end{itemize}
+
+    Como o próprio 6 é um múltiplo de 3, é natural que o MMC entre os dois seja o próprio número 6.
+
+    \begin{equation}
+        MMC(3,6)=6
+    \end{equation}
+\end{exemplo}
+
+E se quiséssemos o MMC entre mais de 2 números?
+
+\begin{exemplo}
+    Encontre o MMC entre 2, 3 e 5.
+
+    \begin{itemize}
+        \item \textbf{Múltiplos de 2:} 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, \textbf{30} ...
+        \item \textbf{Múltiplos de 3:} 3, 6, 9, 12, 15, 18, 21, 24, 27, \textbf{30} ...
+        \item \textbf{Múltiplos de 5:} 5, 10, 15, 20, 25, \textbf{30} ...
+    \end{itemize}
+
+    Então, podemos dizer que o MMC de 2, 3 e 5 é 30.
+
+    \begin{equation}
+        MMC(2,3,5)=30
+    \end{equation}
+    
+    Nesse exemplo já podemos começar a ver um possível problema com nosso método. Quanto mais números eu tiver tentando encontrar o MMC, mais múltiplos eu tenho que escrever... e isso se torna cansativo em algum momento.
+\end{exemplo}
+
+Se quisermos encontrar o MMC entre 4 ou mais números, o processo seria o mesmo. Escrever os múltiplos de cada número, encontrar quais são os múltiplos comuns e então escolher o menor deles. Quanto mais números, mais trabalhoso se torna o processo. 
+
+Porém, temos um \textit{dispositivo prático} para cálculo de MMC, vejamos com o caso de MMC(2,3). A princípio esse método vai parecer bem bobo para esses dois números, mas é uma boa oportunidade de entendermos como montar o dispositivo prático.
+
+\begin{itemize}
+    \item Primeiro, temos que colocar os números lado a lado, e traçar uma linha reta na vertical à direita do último número.
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{cc|c}
+        \textbf{2} & \textbf{3} & \\
+         &  & \\
+         &  & \\
+         &  & \\
+    \end{tabular}
+    \end{table}
+
+    \item Então, temos que ver qual é o menor número que divide 2 ou 3, sempre começando em 2. Nesse caso, é o próprio 2, porém ele não divide 3.. então fica assim:
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{cc|c}
+        \textbf{2} & \textbf{3} & 2\\
+        1 & 3 & \\
+         &  & \\
+         &  & \\
+    \end{tabular}
+    \end{table}
+
+    Como 2 dividido por 2 é 1, colocamos ele na linha de baixo logo abaixo do primeiro 2. Como ``não podemos'' dividir 3 por 2, deixamos ele quieto por enquanto e repetimos ele na linha de baixo.
+
+    \item Quando um dos números chega em 1, ele ``para de participar'' do dispositivo prático, e todas as outras linhas dele serão 1. Já o 3, podemos dividir por 3 mesmo, fica assim:
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{cc|c}
+        \textbf{2} & \textbf{3} & 2\\
+        1 & 3 & 3\\
+        1 & 1 & /\\
+         &  & \\
+    \end{tabular}
+    \end{table}
+
+    Escrevemos o 3 do lado direito, e como 3 dividido por 3 é 1, escrevemos ele na linha de baixo.
+
+    \item Quando chegamos em uma linha em que todos os números são \textbf{1}, encerramos nosso dispositivo prático. Os números que ficaram do lado direito, temos que multiplicá-los pra encontrar o MCC. 
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{cc|c}
+        \textbf{2} & \textbf{3} & 2\\
+        1 & 3 & 3\\
+        1 & 1 & /\\
+         &  & $2 \times 3=6$\\
+    \end{tabular}
+    \end{table}
+
+    Então, temos que o MMC(2,3) = 6, como vimos antes. 
+\end{itemize}
+
+Vamos ver outros exemplos para fixar o nosso dispositivo prático.
+
+\begin{exemplo}
+    Encontre o MMC(2, 4, 6).\\
+
+    Primeiro, temos que colocar todos os números lado a lado em uma mesma linha. A ordem não importa, mas é sempre interessante colocar do menor para o maior, seguindo da esquerda pra direita.
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{2} & \textbf{4} & \textbf{6} & \\
+         &  & \\
+         &  & \\
+         &  & \\
+    \end{tabular}
+    \end{table}
+
+    Agora, qual é o menor número que eu consigo dividir algum daqueles números? Seria o 2 nesse caso, então colocamos ele do lado direito da barra. Coincidentemente, 2 também divide 4 e 6.
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{2} & \textbf{4} & \textbf{6} & 2\\
+         &  & \\
+         &  & \\
+         &  & \\
+    \end{tabular}
+    \end{table}
+
+    Na linha de baixo, temos que colocar o resultado da divisão do número de cima pelo número que colocamos na direita da barra, temos:
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{2} & \textbf{4} & \textbf{6} & 2\\
+         1 & 2 & 3\\
+         &  & \\
+         &  & \\
+    \end{tabular}
+    \end{table}
+
+    Pois \(2\div2=\textbf{1}\), \(4\div2=\textbf{2}\) e \(6\div2=\textbf{3}\).
+
+    Agora, novamente, qual é o menor número que divide algum dos números que sobrou? Novamente temos o 2, então:
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{2} & \textbf{4} & \textbf{6} & 2\\
+         1 & 2 & 3 & 2\\
+         1 & 1 & 3\\
+         &  & \\
+    \end{tabular}
+    \end{table}
+
+    Por fim, temos o 3.
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{2} & \textbf{4} & \textbf{6} & 2\\
+         1 & 2 & 3 & 2\\
+         1 & 1 & 3 & 3\\
+         1 & 1 & 1 & /\\
+    \end{tabular}
+    \end{table}
+
+    E finalizamos nosso dispositivo prático, pois agora temos uma linha só com números 1. Para encontrar o MMC basta multiplicar todos os números que estão à direita da barra, então:
+
+    \begin{equation}
+        MMC(2,4,6)=2\times2\times3=12
+    \end{equation}
+
+    E de fato, se fossemos fazer do outro jeito, teríamos:
+
+    \begin{itemize}
+        \item \textbf{Múltiplos de 2:} 2, 4, 6, 8, 10, \textbf{12} ...
+        \item \textbf{Múltiplos de 4:} 4, 8, \textbf{12} ...
+        \item \textbf{Múltiplos de 6:} 6, \textbf{12} ...
+    \end{itemize}
+
+    ``Ah, mas o número 8 é múltiplo comum de 2 e 4!'' Sim, mas ele não é múltiplo de 6.. e queremos o MMC entre 2, 4 e 6.
+\end{exemplo}
+
+Vamos ver outros exemplos de maneira menos detalhada.
+
+\begin{exemplo}
+    Encontre o MMC(3, 6, 12).
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{3} & \textbf{6} & \textbf{12} & \\
+         &  & \\
+         &  & \\
+         &  & \\
+    \end{tabular}
+    \end{table}
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{3} & \textbf{6} & \textbf{12} & 2\\
+        3 & 3 & 6\\
+         &  & \\
+         &  & \\
+    \end{tabular}
+    \end{table}
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{3} & \textbf{6} & \textbf{12} & 2\\
+        3 & 3 & 6 & 2\\
+        3 & 3 & 3\\
+         &  & \\
+    \end{tabular}
+    \end{table}
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{3} & \textbf{6} & \textbf{12} & 2\\
+        3 & 3 & 6 & 2\\
+        3 & 3 & 3 & 3\\
+        1 & 1 & 1 & /\\
+    \end{tabular}
+    \end{table}
+
+    Portanto, 
+
+    \begin{equation}
+        MMC(3,6,12)=2\times2\times3=12
+    \end{equation}
+
+    Fica como exercício para o aluno realizar o MMC da outra maneira e conferir o resultado.
+\end{exemplo}
+
+\begin{exemplo}
+    Encontre o MMC(2, 3, 5).
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{2} & \textbf{3} & \textbf{5} & \\
+         &  & \\
+         &  & \\
+         &  & \\
+    \end{tabular}
+    \end{table}
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{2} & \textbf{3} & \textbf{5} & 2\\
+        1 & 3 & 5\\
+         &  & \\
+         &  & \\
+    \end{tabular}
+    \end{table}
+    
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{2} & \textbf{3} & \textbf{5} & 2\\
+        1 & 3 & 5 & 3\\
+        1 & 1 & 5 & \\
+         &  & \\
+    \end{tabular}
+    \end{table}
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{2} & \textbf{3} & \textbf{5} & 2\\
+        1 & 3 & 5 & 3\\
+        1 & 1 & 5 & 5\\
+        1 & 1 & 1 & /\\
+    \end{tabular}
+    \end{table}
+
+    Portanto, 
+
+    \begin{equation}
+        MMC(2,3,5)=2\times3\times5=30
+    \end{equation}
+
+    Da mesma forma que vimos em exemplos anteriores.
+\end{exemplo}
+
+Vejamos um exemplo com números maiores agora.
+
+\begin{exemplo}
+    Encontre o MMC(20, 90, 150).
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{20} & \textbf{90} & \textbf{120} & \\
+         &  &  & \\
+         &  &  & \\
+         &  &  & \\
+    \end{tabular}
+    \end{table}
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{20} & \textbf{90} & \textbf{120} & 2\\
+        10 & 45 & 60 & \\
+         &  &  & \\
+         &  &  & \\
+    \end{tabular}
+    \end{table}
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{20} & \textbf{90} & \textbf{120} & 2\\
+        10 & 45 & 60 & 2\\
+        5 & 45 & 30 & \\
+         &  &  & \\
+    \end{tabular}
+    \end{table}
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{20} & \textbf{90} & \textbf{120} & 2\\
+        10 & 45 & 60 & 2\\
+        5 & 45 & 30 & 2\\
+        5 & 45 & 15 & \\
+    \end{tabular}
+    \end{table}
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{20} & \textbf{90} & \textbf{120} & 2\\
+        10 & 45 & 60 & 2\\
+        5 & 45 & 30 & 2\\
+        5 & 45 & 15 & 3\\
+        5 & 15 & 5 & \\
+    \end{tabular}
+    \end{table}
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{20} & \textbf{90} & \textbf{120} & 2\\
+        10 & 45 & 60 & 2\\
+        5 & 45 & 30 & 2\\
+        5 & 45 & 15 & 3\\
+        5 & 15 & 5 & 3\\
+        5 & 5 & 5 & \\
+    \end{tabular}
+    \end{table}
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{20} & \textbf{90} & \textbf{120} & 2\\
+        10 & 45 & 60 & 2\\
+        5 & 45 & 30 & 2\\
+        5 & 45 & 15 & 3\\
+        5 & 15 & 5 & 3\\
+        5 & 5 & 5 & 5\\
+        1 & 1 & 1 & /\\
+    \end{tabular}
+    \end{table}
+
+    Portanto,
+
+    \begin{equation}
+        MMC(20,90,120)=2\times2\times2\times3\times3\times5=360
+    \end{equation}
+\end{exemplo}
+
+Como o aluno pode perceber, escrever uma nova tabela toda vez que fizermos algo no dispositivo prático toma muito espaço da apostila, então os outros exemplos serão feitos utilizando uma única tabela.
+
+\begin{exemplo}
+    Encontre o MMC(36, 44).
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{cc|c}
+        \textbf{36} & \textbf{44} & 2\\
+        18 & 22 & 2\\
+        9 & 11 & 3\\
+        3 & 11 & 3\\
+        1 & 11 & 11\\
+        1 & 1 & /\\
+    \end{tabular}
+    \end{table}
+
+    Portanto,
+
+    \begin{equation}
+        MMC(36,44)=2\times2\times3\times3\times11=396
+    \end{equation}
+\end{exemplo}
+
+Enfim, poderíamos ficar o resto da apostila aqui escrevendo exemplos de cálculo de MMC. O importante é que o dispositivo prático tenha ficado claro, pois o procedimento para Máximo Divisor Comum será \textbf{muito} parecido com este.
+
+Mas qual a utilidade de MMC? \textit{Uai}, uma delas é o próprio cálculo de denominador comum quando estamos fazendo soma ou subtração de frações. Agora não precisamos mais utilizar aquele método horrível apresentado no capítulo de frações. Por nada.
+
+Outra utilidade são situações problema que podem surgir em exercícios de matemática, ou mesmo na vida real. Observe a seguinte situação: \textit{Suponha que um determinado ônibus A passa no ponto a cada 20 minutos, e outro ônibus B passa a cada 30 minutos. Quando esses dois ônibus passarão ao mesmo tempo pelo ponto?}
+
+Acredite ou não, esse exemplo anterior é um problema para ser resolvido com MMC, você consegue resolver e explicar o por quê?
+
+\newpage
+
+\section{Máximo Divisor Comum}
+
+Se o aluno entendeu o conceito de Mínimo Múltiplo Comum, o conceito de \textbf{Máximo Divisor Comum} fica bem mais tranquilo. 
+
+Antes, queríamos encontrar qual era o menor número que era tanto múltiplo de um número quanto do outro, como o próprio nome diz. Agora, queremos encontrar qual o \textbf{maior} número que divide ambos os números. Inclusive, podemos começar quase da mesma forma que vimos em MMC.
+
+\begin{exemplo}
+    Encontre o Máximo Divisor Comum (MDC) de 10 e 8.
+
+    Primeiro, temos que encontrar todos os \textbf{divisores} de 10 e todos de 8.
+
+    \begin{itemize}
+        \item \textbf{Divisores de 10:} 10, 5, \textbf{2}, 1.
+        \item \textbf{Divisores de 8:} 8, 4, \textbf{2}, 1.
+    \end{itemize}
+
+    Interessante agora percebermos que não é um conjunto infinito de números mais, os divisores tem um ``fim''. Sendo que o maior divisor de um número é sempre ele mesmo.
+
+    Dessa forma, queremos o \textbf{maior} número que divide tanto 10 quanto 8, que será o número 2.
+
+    Portanto, 
+
+    \begin{equation}
+        MDC(10,8)=2
+    \end{equation}
+\end{exemplo}
+
+A diferença de MDC para MMC é que antes começávamos a partir do número e íamos ``aumentando'', agora começamos no número e vamos ``diminuindo'' até chegar em 1.
+
+A \textit{dificuldade} aqui é ter certeza que listamos todos os divisores do número que estamos trabalhando. No MMC era só ir somando o próprio número várias vezes, mas aqui temos que ter um pouco mais de cuidado para não esquecer de nenhum.
+
+Por conta desse ``problema'', tentar encontrar o MDC pelo método apresentado no exemplo anterior pode se tornar \textit{perigoso}. Vamos direto para o \textbf{dispositivo prático}. Mas tenha em mente que é sempre uma opção.
+
+\begin{exemplo}
+    \textbf{Dispositivo Prático}\\
+
+    Encontre o MDC(10,8).\\
+
+    Da mesma maneira que fizemos no MMC, temos que escrever os números lado a lado, traçar uma linha e colocar os números que dividem do outro lado. Igualzinho.
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{cc|c}
+        \textbf{8} & \textbf{10} & 2\\
+        4 & 5 & 2\\
+        2 & 5 & 2\\
+        1 & 5 & 5\\
+        1 & 1 & /\\
+    \end{tabular}
+    \end{table}
+
+    Porém, aqui vem a diferença, queremos usar somente os números do lado direito quando eles dividirem os outros números ao mesmo tempo, ou seja:
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{cc|c}
+        \textbf{8} & \textbf{10} & \textbf{\textcolor{red}{2}}\\
+        4 & 5 & 2\\
+        2 & 5 & 2\\
+        1 & 5 & 5\\
+        1 & 1 & /\\
+    \end{tabular}
+    \end{table}
+
+    Somente o primeiro 2 do lado direito, todos os outros não dividem ambos ao mesmo tempo. Em outros exemplos isso vai ficar mais claro. 
+
+    Então, para encontrar o MDC temos que multiplicar todos os números ``selecionados'' do lado direito. Nesse caso, somente o número 2 uma única vez.
+
+    Portanto,
+
+    \begin{equation}
+        MDC(8,10)=2
+    \end{equation}
+\end{exemplo}
+
+Vejamos outros exemplos para ficar mais claro.
+
+\begin{exemplo}
+    Encontre o MDC(6, 18, 36).
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{6} & \textbf{18} & \textbf{36} & \textcolor{red}{2}\\
+        3 & 9 & 18 & 2\\
+        3 & 9 & 9 & \textcolor{red}{3}\\
+        1 & 3 & 3 & 3\\
+        1 & 1 & 1 & /\\
+    \end{tabular}
+    \end{table}
+
+    Nesse caso, tanto o ``primeiro'' 2 quanto o ``primeiro'' 3 dividem todos os números do lado esquerdo ``ao mesmo tempo''. Então,
+
+    \begin{equation}
+        MDC(6,18,36)=2\times3=6
+    \end{equation}
+\end{exemplo}
+
+\begin{exemplo}
+    Encontre o MDC(150, 180).
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{cc|c}
+        \textbf{150} & \textbf{180} & \textbf{\textcolor{red}{2}}\\
+        75 & 90 & 2\\
+        75 & 45 & \textbf{\textcolor{red}{3}} \\
+        25 & 15 & 3 \\
+        25 & 5 & \textbf{\textcolor{red}{5}} \\
+        5 & 1 & 5 \\
+        1 & 1 & / \\
+    \end{tabular}
+    \end{table}
+
+    Portanto,
+
+    \begin{equation}
+        MDC(150, 180)=2\times3\times5=30
+    \end{equation}
+\end{exemplo}
+
+\begin{exemplo}
+    Encontre o MDC(2,3,5).
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc|c}
+        \textbf{2} & \textbf{3} & \textbf{5} & 2\\
+        1 & 3 & 5 & 3\\
+        1 & 1 & 5 & 5\\
+        1 & 1 & 1 & /\\
+    \end{tabular}
+    \end{table}
+
+    Como esperado, nenhum número divide 2, 3 e 5 ao mesmo tempo. Logo, não há um divisor comum entre eles.
+\end{exemplo}
+
+E novamente o aluno pode ser perguntar, \textbf{qual a utilidade de MDC}? 
+
+Um exemplo do ``cotidiano'' seria o seguinte: \textit{Imagine que em uma sala de aula interdisciplinar na UFMG existam 130 estudantes de Engenharia Mecânica e 22 de Engenharia Aeroespacial, o professor quer dividir a turma em grupos de forma que cada grupo tenha a mesma quantidade de alunos de cada engenharia. Qual é o máximo de grupos que o professor consegue formar?}
+
+E mais, quantos alunos de cada curso teria por grupo? Tente resolver esse problema e ajudar esse professor a ressocializar os alunos da engenharia.
+
+\newpage
+
+\section{Regra de Três}
+Talvez seja uma ferramentas matemáticas mais conhecidas pelos estudantes, um aparato muito precioso e utilizado quando não sabemos resolver alguma questão durante a prova e então refletimos em desespero ``será que dá pra resolver por regra de três?''.
+
+Apesar dessa relação matemática ser muito importante e elegante, precisamos ter alguns cuidados ao utilizá-la. Por isso, é essencial a definição de certos conceitos anteriores.
+
+\subsection{Gradezas e proporcionalidade}
+
+É bem comum e cotidiano nos depararmos com grandezas e valores que se relacionam \textbf{diretamente} ou \textbf{inversamente} entre si. Por exemplo, em um cenário hipotético, imagine que o seguinte: 
+
+\begin{itemize}
+    \item O preço da gasolina/álcool/diesel aumente expressivamente... digamos que a média do combustível comece a custar R\$ 10 reais por litro. \textit{Apocalipse}.
+    \item Com esse aumento, com certeza vamos começar a observar consequências em outras mercadorias e/ou serviços, por exemplo:
+    \begin{itemize}
+        \item o preço de alimentos que são transportados por rodovias irá aumentar, pois os caminhões consomem um combustível mais caro;
+        \item menos pessoas irão usar automóveis particulares para se deslocar;
+        \item aumento da procura por transporte público, que também terá um aumento no valor da passagem para compensar o aumento do gasto com combustível.
+    \end{itemize}
+\end{itemize}
+
+E assim em diante, um caos instaurado. Focando no que nos interessa, foram citados exemplo de coisas que \textbf{aumentam} e outras que \textbf{diminuem} com o aumento do valor do combustível. Nesses casos, dizemos que essas grandezas (em relação ao preço do combustível) são \textbf{diretamente proporcionais} e \textbf{inversamente proporcionais}, respectivamente.
+
+Ou seja, em palavras mais simples, \textbf{diretamente proporcional} é quando uma coisa aumenta por conta do aumento de outra, e \textbf{inversamente proporcional} é quando uma coisa diminuí quando a outra aumenta ou vice-versa. Pronto.
+
+Essa relação entre grandezas parece relativamente simples e bobo em um primeiro contato, mas é de uma importância majestosa escondida, mais notavelmente quando vamos para o mundo das funções e da Física no geral. Mas esse aprofundamento você verá na apostila de matemática mais geral e/ou de Física. Por enquanto, vejamos como poderíamos usar essas relações matematicamente.
+
+\begin{exemplo}
+    Sabendo que uma certa máquina de uma fábrica é capaz de produzir 50 parafusos por minuto, vejamos a relação de parafusos com o tempo.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{ccccc}
+            Parafusos & 50 & 100 & 150 & 200\\
+            Tempo (min) & 1 & 2 & 3 & 4\\
+        \end{tabular}
+        \label{tab:fabrica_parafusos_1}
+    \end{table}
+
+    Com a tabela anterior, temos a relação entre a quantidade de parafusos fabricados por essa fábrica em um certo instante de tempo. Perceba que quando fizermos a \textbf{razão} entre as duas grandezas (quantidade e tempo), sempre encontraremos o mesmo valor constante. 
+
+    \begin{equation}
+        \frac{50}{1}=\frac{100}{2}=\frac{150}{3}=\frac{200}{4}=50
+    \end{equation}
+
+    Todas as frações/divisões podem ser simplificadas para 50, que é uma relação constante entre número de parafusos produzidos por tempo. Isso vai acontecer somente se a frequência de parafusos que a máquina produz for constante o tempo todo.
+
+    Nesse caso, dizemos que são grandezas \textbf{diretamente proporcionais}, pois quando uma aumenta a outra também aumenta. Ou seja, com o passar do tempo temos mais parafusos fabricados no total.
+\end{exemplo}
+
+No exemplo anterior, apareceu uma palavrinha que também deu as caras em outros momentos da apostila: \textbf{razão} entre duas grandezas. Toda vez que vermos esse termo, temos que pensar na \textbf{divisão} entres essas duas grandezas. 
+
+Por exemplo, a razão entre parafusos com o tempo pode ser escrita como sendo 50 parafusos/minuto. Mas se fosse pedida a razão entre tempo com os parafusos, daí teríamos na verdade 1/50 minutos/parafuso. Ou seja, são necessários 1/50 minutos (\(0,02\) minutos) para produzir 1 parafuso. E isso vai depender de que informação estamos querendo: quantos parafusos são produzidos por minuto \textbf{ou} quantos minutos levam para produzir 1 parafuso.
+
+\begin{tcolorbox}[title=IMPORTANTE]
+    Agora o estudante deve parar por um momento e refletir se realmente entendeu o que foi explicado nos últimos dois parágrafos, pois é um conceito muito importante que sempre aparece em questões de prova (ou mesmo no dia a dia). Tente criar outro exemplo para ser aplicado o conceito de razão.
+\end{tcolorbox}
+
+Vamos começar a caminhar em direção à nossa regra de três então. Pense o seguinte cenário agora, o proprietário dessa fábrica resolveu adquirir mais 2 máquinas fabricadoras de parafuso para essa industria, quantos parafusos serão produzidos por minuto agora?
+
+\begin{table}[H]
+        \centering
+        \begin{tabular}{ccccc}
+            Parafusos & 150 & 300 & 450 & 600\\
+            Tempo (min) & 1 & 2 & 3 & 4\\
+        \end{tabular}
+        \label{tab:fabrica_parafusos_2}
+    \end{table}
+
+Pois agora temos 3 máquinas trabalhando, cada uma produzindo 50 parafusos por minuto, então teremos \(3\times50\) parafusos por minuto: 150 parafusos/minuto.
+
+Se formos fazer a razão de parafusos por tempo novamente teríamos:
+
+\begin{equation}
+    \frac{150}{1}=\frac{300}{2}=\frac{450}{3}=\frac{600}{4}=150
+\end{equation}
+
+E agora teríamos uma razão de 150 parafusos por minuto \textbf{produzidos pela fábrica}, as máquinas ainda continuam em 50 parafusos/minuto. Mas aqui podemos ver a relação de proporcionalidade entre duas outras grandezas: \textbf{número de máquinas} com o \textbf{número de parafusos que a fábrica produz por minuto}.
+
+Quanto mais máquinas eu tiver na minha fábrica, mais parafusos eu consigo produzir em 1 minuto, logo, são grandezas \textbf{diretamente proporcionais}. Porém, e se eu pensar na relação de minuto por parafuso novamente? Agora ela seria 1/150 minutos/parafuso (\(\approx 0,007\) minutos), certo?
+
+Anteriormente eu tinha 1/50 minutos (\(0,02\)) para produzir 1 parafuso na fábrica e agora eu tenho 1/150 minutos (\(0,007\)) para produzir 1 parafuso. Então, faz sentido que o nosso tempo de produção de 1 parafuso diminuiu? Isso quer dizer que a relação do número de máquinas com o tempo de produção de 1 parafuso pela fábrica é \textbf{inversamente proporcional}, ou seja, quanto mais aumentarmos o número de máquinas, menor será o tempo que a fábrica leva para produzir 1 parafuso.
+
+\begin{tcolorbox}[title = IMPORTANTE]
+    Toda vez que observarmos esse tipo de relação de proporcionalidade, seja diretamente ou inversamente, a razão entre as duas grandezas sempre nos dará uma constante, que será chamada de \textbf{constante de proporcionalidade} e que será fundamental para começarmos o estudo de funções do primeiro grau.
+\end{tcolorbox}
+
+De maneira geral, comece a reparar em funções que aprendemos na escola, sempre tem uma letrinha ali que costuma ser chamada de ``constante/número de alguma coisa'' (ex.: constante gravitacional universal, número de ouro, número de Euler, constante de Boltzmann, \textbf{pi} etc).
+
+\subsection{Regra de Três Simples} 
+Finalmente, agora podemos discutir o que é regra de três de uma maneira mais elegante. Quando temos que duas grandezas são proporcionais entre sim, podemos calcular a variação ocorrida em uma em função de uma alteração na outra.
+
+Para visualizarmos isso melhor, vamos pensar em um cenário bem comum quando estamos estudando Cinemática:
+
+\begin{exemplo}
+    Considere um carro viajando com velocidade constante (não variável) ao longo de uma estrada, e que em 1 hora de viagem ele percorra 60 quilômetros (km). Quanto ele percorrerá em 5 horas?
+
+    Aqui podemos perceber que existe uma relação de proporcionalidade entre as grandezas ``distância percorrida'' e ``tempo de viagem''. Quanto maior o tempo, maior também será a distância percorrida (e vice-versa), logo são diretamente proporcionais. Para encontrar a distância percorrida em 5 horas podemos utilizar regra de três:
+
+    \begin{enumerate}
+        \item Primeiro vamos criar 2 colunas, na esquerda vamos colocar os dados relacionados com uma grandeza (distância) e no lado direto os dados da outra grandeza (tempo) equivalente à do lado esquerdo:
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{cc}
+                Distância & Tempo \\
+                60 km & 1 hora\\
+                 x km & 5 horas
+            \end{tabular}
+
+        \end{table}
+        onde o ``x'' representa a distância percorrida em 5 horas, que queremos descobrir;
+        \item Montado esse dispositivo, temos agora que ``\textbf{multiplicar cruzado}'', ou seja, o valor de cima da distância multiplica o valor de baixo do tempo e o valor de baixo da distância multiplica o valor de cima do tempo:
+        \begin{equation}
+            60\times5=x\times1
+        \end{equation}
+        \item Então, caímos em uma situação que é simplesmente uma equação do primeiro grau para ser resolvida:
+        \begin{equation}
+            x=60\times5=300
+        \end{equation}
+        \item Pronto, temos o resultado da distância percorrida em 5 horas, que é 300 quilômetros.
+    \end{enumerate}
+\end{exemplo}
+
+A princípio esse parece um exemplo bem simples, mas acidentalmente introduz o conceito de velocidade pra gente. Podemos utilizar regra de três nesse caso exatamente porque a velocidade é \textbf{constante}. Então, a nossa constante de proporcionalidade nesse caso, entre distância percorrida e tempo de viagem, é exatamente a velocidade. Estudaremos isso melhor em Física na parte de Cinemática.
+
+\begin{exemplo}
+    Considere que você está preparando uma receita de bolo, que será o suficiente para 6 amigos comerem sem sobrar, e para isso são necessárias 2 xícaras de leite e 3 ovos para o preparo. No entanto, cada amigo trouxe um conhecido (penetra e fila boia), então agora você precisa fazer quantas receitas para atender 12 pessoas?
+    
+    \vspace{0.2cm}
+    
+    Infelizmente, não é socialmente aceito que você recuse a entrada dessas pessoas na sua casa. Então, como um bom anfitrião você deverá fazer uma quantidade maior.
+    
+    \vspace{0.2cm}
+    
+    Para te ajudar a resolver o problema de quantos ovos e xícaras de leite você precisará agora, podemos utilizar a regra de três. Primeiro veja que para fazer mais bolo, você precisará de mais leite e mais ovos, então aumentar o número de pessoas, aumenta a quantidade de bolo, que aumenta a quantidade de leite e ovos, sendo todas grandezas diretamente proporcionais entre si.
+    
+    \vspace{0.2cm}
+    
+    Primeiro, vamos descobrir quantas receitas precisamos fazer:
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{cc}
+            Pessoas & Receitas \\
+            6 & 1\\
+            12 & x 
+        \end{tabular}
+
+    \end{table}
+
+    Multiplicando cruzado temos:
+
+    \begin{equation}
+        6\times x=12 \times 1
+    \end{equation}
+
+    Que fica simplesmente:
+
+    \begin{equation}
+        x=\frac{12}{6}=2
+    \end{equation}
+
+    Então, você precisa agora fazer 2 receitas para atender a todos. Eu sei que pode parecer bem óbvio para alguns que dobrar o número de pessoas também dobra o número de receitas (e consequentemente o número de ovos e xícaras de leite), mas é exatamente isso que estamos tentar provar numericamente aqui.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{cc}
+            Receitas & Ovos \\
+            1 & 3\\
+            2 & y
+        \end{tabular}
+
+    \end{table}
+
+    \begin{equation}
+        1\times y = 2 \times 3
+    \end{equation}
+    \begin{equation}
+        y=2\times3=6
+    \end{equation}
+    
+    Então, como esperado, você precisará de 6 ovos para fazer as 2  receitas, o dobro. E xícaras de leite?
+    
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{cc}
+            Receitas & Xícaras de leite \\
+            1 & 2\\
+            2 & z
+        \end{tabular}
+
+    \end{table}
+    
+    \begin{equation}
+        1\times z = 2\times 2
+    \end{equation}
+    \begin{equation}
+        z=2\times2=4
+    \end{equation}
+
+    Então, também como esperado, você precisará de 4 xícaras de leite para fazer as 2 receitas, também o dobro. Com o tempo, e utilizando cada vez mais o conceito de regra de três, ficará mais intuitivo trabalhar com resultados mais diretos sem fazer muita conta. Nesse caso, só de perceber que o número de pessoas dobra todo o restante também precisar ser o dobro.
+    Se fosse um valor menos ``bonito'' de pessoas, digamos 9 invasores, a conta seria mais útil e interessante. 
+\end{exemplo}
+
+No entanto, nos dois últimos exemplos vimos casos em que as grandezas eram diretamente proporcionais, mas e no caso de serem inversamente proporcionais?
+
+O processo é quase o mesmo, temos só que mudar um pequeno detalhe, vejamos:
+
+\begin{exemplo}
+    Considere um carro de corrida que dá voltas em uma pista durante um treinamento. Quando o carro tem uma velocidade de 100 km/h (quilômetros por hora) ele demora 30 minutos para completar uma volta. Se ele aumentar sua velocidade para 200 km/h, quanto tempo ele levará para dar 1 volta completa?
+
+    \vspace{0.5cm}
+
+    E aqui vem a pegadinha... estamos acostumados com grandezas diretamente proporcionais, então podemos pensar que se a velocidade dobra então o tempo também dobra, né? \textbf{Não}, pois essas duas grandezas na verdade são inversamente proporcionais. Reflita, se o carro vai mais rápido ele demora mais ou menos tempo para chegar no destino?
+
+    \vspace{0.5cm}
+
+    Exatamente, ele demora menos tempo, então são inversamente proporcionais. Para resolver um caso de regra de três inversamente proporcional, temos que seguir o seguinte passo a passo:
+    
+    \begin{enumerate}
+        \item Como na regra de três de antes, primeiro vamos criar 2 colunas, na esquerda vamos colocar os dados relacionados com uma grandeza (velocidade) e no lado direto os dados da outra grandeza (tempo):
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{cc}
+                Velocidade & Tempo \\
+                100 km/h & 30 minutos\\
+                200 km/h & x minutos
+            \end{tabular}
+
+        \end{table}
+        onde o ``x'' representa o tempo que ele irá demorar para completar 1 volta, que queremos descobrir;
+        \item Montado esse dispositivo, antes de multiplicar cruzado, temos agora que \textbf{inverter a ordem em somente um lado da tabela}, então ao invés da tabela anterior, teremos:
+
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{cc}
+                Velocidade & Tempo \\
+                100 km/h & x minutos\\
+                200 km/h & 30 minutos
+            \end{tabular}
+
+        \end{table}
+
+        Perceba que foi invertido/trocado de lugar o ``x'' com o ``30'', e não faria diferença ter invertido o ``100'' com o ``200'' no lugar, só não podemos inverter os dois ao mesmo tempo, somente de um lado. Na prática, estamos ``forçando'' essas grandezas a serem diretamente proporcionais. E com isso, podemos agora continuar o processo e multiplicar cruzado:
+
+        \begin{equation}
+            100\times30=200\times x
+        \end{equation}
+
+        \begin{equation}
+            x=\frac{3000}{200}=15 \quad minutos
+        \end{equation}
+
+        \item E então temos o tempo que o carro levará tendo uma velocidade maior.
+    \end{enumerate}
+\end{exemplo}
+
+E nesse último exemplo também começamos a ver uma coisa bem interessante. Para grandezas diretamente proporcionais, dobrar alguma grandeza também dobraria a outra, mas agora para inversamente proporcionais se dobrarmos uma grandeza a outra é reduzida pela metade. 
+
+Se o(a) estudante for curioso, tente demonstrar que para grandezas inversamente proporcionais se triplicarmos ou quadruplicarmos uma grandeza, a outra será dividida por 3 ou por 4, respectivamente. Ou use qualquer outro número.
+
+Algo interessante a se notar aqui é que ao invés de multiplicarmos cruzado, poderíamos simplesmente trabalhar com as frações/razões, já que elas serão constantes. Por exemplo:
+
+\begin{exemplo}
+    Um padeiro produz cerca de 100 pães por dia, se mais um padeiro for contratado, quantos pães essa padaria conseguirá produzir por dia?
+
+    \vspace{0.5cm}
+
+    Poderíamos resolver do jeito tradicional, multiplicando cruzado:
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{cc}
+            Padeiros & Pães \\
+            1 & 100\\
+            2 & x
+        \end{tabular}
+
+    \end{table}
+
+
+então,
+
+\begin{equation}
+    1\times x=2\times100
+\end{equation}
+\begin{equation}
+    x=2\times100=200 \quad \text{pães}
+\end{equation}
+
+Mas vamos ver como ficaria em forma de fração. Ao invés de multiplicar cruzado, vamos fazer a razão dos números da esquerda e igualar a razão dos números da direita.
+
+\begin{equation}
+    \frac{1}{2}=\frac{100}{x}
+\end{equation}
+
+Que o(a) estudante atento(a) perceberá que é a \textbf{mesma coisa} de ``montar a tabela''. Então, na verdade esse procedimento de montar a tabela na verdade é igualar as razões entre as grandezas que são proporcionais.
+\end{exemplo}
+
+Esse último exemplo será mais útil para entender melhor o desenvolvimento da regra de três composta, então reflita sobre ele com carinho. Futuramente, essa ideia te ajudará a entender melhor o conceito de proporcionalidade dentro de semelhança de triângulos, que vamos ver em geometria em outra apostila.
+
+\subsection{Regra de Três Composta}
+A regra de três composta é bem similar à regra de três normal, com a diferença que estamos trabalhando com relação entre 3 ou mais grandezas ao mesmo tempo.
+
+Vejamos já de cara um exemplo prático:
+
+\begin{exemplo}
+    Uma obra pode ser realizada por \textbf{6 operários} em \textbf{10 dias}, trabalhando \textbf{8 horas por dia}. Em quantos dias \textbf{8 operários}, trabalhando \textbf{6 horas por dia}, farão a mesma obra?
+
+    \vspace{0.5cm}
+
+    Da mesma forma de antes, vamos montar uma tabela com todas as grandezas, uma em cada coluna:
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{ccc}
+            Operários & Dias & Horas por dia\\
+             6 & 10 & 8\\
+             8 & x & 6
+        \end{tabular}
+
+    \end{table}
+
+    E aqui nesse caso a nossa incógnita ``x'' vai ser o número de dias necessários para finalizar a obra. No caso da regra de três composta, temos que fazer o seguinte:
+
+    \begin{enumerate}
+        \item Fixar a coluna que contém a variável que estamos procurando, ou seja, fixar a coluna dos \textbf{dias};
+        \item Então, analisar coluna por coluna em relação à nossa coluna fixada se elas serão diretamente ou inversamente proporcionais;
+        \begin{itemize}
+            \item A coluna de \textbf{operários} com a dos \textbf{dias} é inversamente proporcional, pois quanto mais operários menos dias seriam necessários para finalizar a obra (teoricamente).
+            \item A coluna de \textbf{horas por dia} em relação à de \textbf{dias} também é inversamente proporcional, pois quanto mais horas trabalhada por dia, menos dias são necessários para finalizar a obra.
+        \end{itemize}
+        \item Do mesmo jeito de antes, quando tivermos coisas inversamente proporcionais, temos que ``forçar'' elas virarem diretamente proporcionais, invertendo os números de lugar (na mesma coluna) como havíamos feito antes. Então:
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{ccc}
+             Operários & Dias & Horas por dia\\
+             8 & 10 & 6\\
+             6 & x & 8 
+            \end{tabular}
+
+        \end{table}
+        \item Com isso, agora temos que todas as grandezas estão colocadas de uma forma que sejam diretamente proporcionais. Então, podemos resolver na forma de fração para facilitar (multiplicação cruzada aqui iria ficar muito estranha).
+        \item Isolamos a fração que tem a incógnita de um lado da igualdade e o resto se multiplica do outro lado da igualdade:
+        \begin{equation}
+            \frac{10}{x}=\frac{8}{6}\times\frac{6}{8}
+        \end{equation}
+        \item E agora resolvemos essa equação
+        \begin{equation}
+            \frac{10}{x}=1 \xrightarrow{}x=10
+        \end{equation}
+    \end{enumerate}
+
+    E então encontramos quantos dias seriam necessários para \textbf{8 operários} terminarem a obra trabalhando \textbf{6 horas por dia}.
+\end{exemplo}
+
+Em um primeiro contato parece super complexo e cheio de regras, então vamos ver um outro exemplo para fixação.
+
+\begin{exemplo}
+    Uma máquina produz \textbf{120 peças} em \textbf{4 dias}, funcionando \textbf{6 horas por dia}. Quantas peças essa máquina produzirá em \textbf{6 dias}, funcionando \textbf{8 horas por dia}?
+
+    \vspace{0.5cm}
+
+    Novamente uma regra de três composta por ter mais de 2 grandezas. Vamos tentar resolver de forma mais direta agora:
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{ccc}
+           Peças & Horas por dia & Dias \\
+           120 & 6 & 4\\
+           x & 8 & 6
+        \end{tabular}
+
+    \end{table}
+
+    Fixamos a nossa coluna que tem a incógnita, que agora é a de \textbf{peças} e analisamos as demais em relação à ela.
+
+    \begin{itemize}
+        \item Mais horas trabalhadas por dia resulta em mais peças produzidas: diretamente proporcional (não precisa inverter);
+        \item Mais dias resulta em mais peças produzidas: diretamente proporcional (não precisa inverter).
+    \end{itemize}
+
+    Então ficamos com a tabela original e somente montamos as frações:
+
+    \begin{equation}
+        \frac{120}{x}=\frac{6}{8}\times\frac{4}{6}
+    \end{equation}
+
+    Que resolvendo, temos:
+
+    \begin{equation}
+        x=\frac{120\times8\times6}{6\times4}=240
+    \end{equation}
+
+    E fim, temos nosso resultado.
+\end{exemplo}
+
+\begin{tcolorbox}[title = IMPORTANTE]
+    Caro estudante, essa apostila tem também o objetivo de te fazer apreciar mais a matemática e enxergar melhor sua beleza e elegância. Por isso, vamos notar o seguinte fato: \textbf{toda regra de três composta pode ser resolvida com sequências de regras de três simples}. E isso facilitará muito nossa vida.
+\end{tcolorbox}
+
+Vamos visualizar um exemplo em que podemos resolver a regra de três simples simplesmente usando a regra de três simples duas vezes.
+
+\begin{exemplo}
+    \textbf{Utilizando o mesmo exemplo anterior}: Uma máquina produz 120 peças em 4 dias, funcionando 6 horas por dia. Quantas peças essa máquina produzirá em 6 dias, funcionando 8 horas por dia?
+
+    \vspace{0.5cm} 
+
+    Primeiro, vamos comparar o número de peças com o número de dias:
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{cc}
+            Peças & Dias \\
+            120 & 4\\
+            x & 6
+        \end{tabular}
+
+    \end{table}
+
+    Que é um caso de regra de três simples, resolvendo:
+
+    \begin{equation}
+        120\times6=x\times 4
+    \end{equation}
+
+    \begin{equation}
+        x=\frac{120\times6}{4}=180
+    \end{equation}
+
+    Ou seja, uma máquina trabalhando \textbf{6 horas por dia}, durante \textbf{6 dias}, produziria \textbf{180 peças}. Porém, quanto ela produziria se fossem \textbf{8 horas por dia}?
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{cc}
+             Peças & Horas por dia \\
+             180 & 6 \\
+             y & 8
+        \end{tabular}
+
+    \end{table}
+
+    E então temos outra regra de três simples que podemos resolver.
+
+    \begin{equation}
+        180\times8=y\times6
+    \end{equation}
+
+    Ficando:
+
+    \begin{equation}
+        y=\frac{180\times8}{6}=240
+    \end{equation}
+
+    \textbf{OPA!} Encontramos o mesmo resultado mas sem utilizar regra de três composta!
+\end{exemplo}
+
+E aqui a ideia é analisar individualmente coluna por coluna como se fossem regras de três simples cada vez que é feito, sempre fixando o número anterior que foi analisado.
+
+Então, fica a critério do(a) estudante escolher com qual método vai se sentir mais confortável e seguro(a) para utilizar no seu estudo e nas provas. Mas novamente, quanto mais ferramentas matemáticas tivermos na nossa caixinha de ferramentas, mais opções vamos ter para escolher (grandezas diretamentes proporcionais, olha só).
+
+\newpage
+
+\section{Notação Científica}
+
+Notação científica é mais uma das ferramentas que temos para nos ajudar na resolução de problemas complexos, sendo muitas vezes essencial em diversos problemas da Física e Química. Resumindo de maneira simplista, notação científica nos permite escrever números muito grandes ou pequenos de uma maneira mais reduzida e legível. 
+
+\begin{tcolorbox}[title = OBSERVAÇÃO]
+    Vamos tentar desenvolver o conceito de notação científica sem o conceito de \textbf{algarismo significativo}, que a princípio não vai nos atrapalhar muito.
+\end{tcolorbox}
+
+Como um exemplo e motivação inicial, vamos pegar o valor aproximado da velocidade da luz no vácuo (que na verdade é a velocidade limite calculada para o nosso universo, e a luz se propaga nessa velocidade).
+
+\begin{equation}
+    c=300.000.000 \quad m/s
+\end{equation}
+
+Convenhamos que é um número relativamente grande, e seria bem chato ficar tendo que escrever diversas vezes ao longo da resolução de um exercício. Porém, podemos escrever ele em notação científica como:
+
+\begin{equation}
+    c=3.10^8 \quad m/s
+\end{equation}
+
+Que se torna uma maneira muito mais elegante e compacta. Caso o(a) estudante ainda não se sinta motivado(a) a utilizar notação científica, vamos pegar outro exemplo. 
+
+Para aqueles que ainda não sabiam, nós somos compostos de átomos, coisas bem pequeninas que se juntam para formarem moléculas (que não meninas \textit{sapéculas}), como por exemplo a molécula de água, que conhecemos como \(H_2O\) - um \textit{spoiler} das aulas de Química. ``Dentro'' desses átomos temos partículas subatômicas conhecidas como prótons, elétrons e nêutrons - ou seja, coisas ainda menores. 
+
+Pensando especificamente no elétron, o menor dos três, vocês conseguiriam pensar em qual seria a massa desse querido? Quem chutou:
+
+\begin{equation}
+    0,000000000000000000000000000000910938356 \quad kg
+\end{equation}
+
+Chegou bem perto de acertar (possivelmente). Parabéns (?). No entanto, esse número escrito em Notação Científica ficaria:
+
+\begin{equation}
+    m_e=9,10938356\times10^{-31} \quad kg
+\end{equation}
+
+Acredito que agora sim o(a) estudante está com a motivação certa para começar a aprender Notação Científica.
+
+Então, como vimos superficialmente nos exemplos anteriores, podemos escrever números muito grandes ou muito pequenos em uma forma mais compacta simplesmente alterando a posição da vírgula e multiplicando por 10 elevado à alguma coisa. Mas por que isso funciona? 
+
+Se lembrarem bem da parte de potenciação apresentada nessa apostila, elevar um número (A) à um expoente (B) é a mesma coisa que multiplicar A por A, B vezes. Em outra palavras, o número \(2^5\) é a mesma coisa que fazer \(2\times2\times2\times2\times2\). E como multiplicar e dividir por 10 ``faz a vírgula'' se deslocar para direita e esquerda, respectivamente, fazer essa operação repetidas vezes seria interessante para compactar (ou expandir) os números de interesse.
+
+\begin{exemplo}
+    Considere o número 3460, escreva ele em forma de Notação Científica.
+
+    \vspace{0.5cm}
+
+    Como vimos lá no primeiro capítulo da apostila - e também no capítulo de números decimais - a vírgula nesse caso estaria após o algarismo 0 de 3460, que seria o mesmo que escrever 3460,0. A princípio, para escrevê-lo em Notação Científica temos que mover a vírgula ``para ficar'' entre o 3 e o 4, e podemos fazer isso se dividirmos esse número por 1000, de forma que fique somente um algarismo na parte inteira.
+
+    \vspace{0.5cm}
+
+    Porém, não podemos simplesmente alterar o valor de um número assim do nada, então tempos que ``compensar'' essa divisão com uma multiplicação por 1000 (ou \(10^{3}\)). Dessa forma, na prática estaríamos multiplicando o número 3460 por 1, que não altera em nada o valor dele, veja:
+
+    \begin{equation}
+        \frac{3460}{1000}\times1000=3,460\times1000=3460
+    \end{equation}
+
+    Então podemos transformar 3460 para:
+
+    \begin{equation}
+        3,460\times10^3
+    \end{equation}
+
+    sem problema algum.
+\end{exemplo}
+
+\begin{exemplo}
+    Reescreva o número 34567,785 em Notação Científica:
+
+    \vspace{0.5cm}
+
+    Mesma coisa, nesse caso a vírgula está entre 7 e 7, e queremos colocá-la entre o 3 e 4, então temos que ``andar'' 4 casas decimais para \textbf{esquerda} - ou seja \textbf{dividir} por 10.000 - lembrando de adicionar a multiplicação (também por 10.000) para não alterar o valor do número, apenas reescrevê-lo.
+
+    \begin{equation}
+        \frac{34567,785}{10.000}\times10.000=3,4567785\times10.000=3,4567785\times10^4
+    \end{equation}
+
+    E temos o nosso número reescrito na forma de Notação Científica.
+\end{exemplo}
+
+\begin{exemplo}
+    Reescreva o número 0,00835 em Notação Científica:
+
+    \vspace{0.5cm}
+
+    Agora a vírgula está longe três casas do primeiro número diferente de 0, então temos que andar com a vírgula três algarismos para \textbf{direita} - ou seja \textbf{multiplicar} por 1000. E nesse caso, temos também que dividir por 1000 para não alterar o valor do número.
+
+    \begin{equation}
+        0,00835=\frac{0,00835}{1000}\times1000=\frac{8,35}{10^3}=8,35\times10^{-3}
+    \end{equation}
+
+    E essa alteração do número no denominador para o numerado trocando o sinal do expoente não deve ser um mistério para o(a) estudante nesse ponto da apostila. Caso seja, releia o capítulo \ref{potenciacao}.
+\end{exemplo}
+
+Em resumo:
+
+\begin{itemize}
+    \item Quando quisermos deslocar a vírgula para direita no número, devemos multiplicar por 10 elevado à um expoente positivo, de valor correspondente ao número de casas que se deseja deslocar.
+    \item Por outro lado, se quisermos deslocar a vírgula para a esquerda, devemos multiplicar o número por 10 elevado à um número negativo, de valor correspondente ao número de casas que se deseja deslocar.
+\end{itemize} 
+
+\begin{tcolorbox}[title=IMPORTANTE]
+    É importante ressaltar que nem sempre vamos querer escrever o número com somente 1 algarismo à esquerda da vírgula (com 1 algarismo na parte inteira), podemos colocar (ou tirar) quantos quisermos, e isso se mostrará muito útil quando precisarmos realizar operações entre números escritos em Notação Científica (que na teoria não seria Notação Científica, mas para o nosso nível de estudo aqui não fará diferença).
+\end{tcolorbox}
+
+Por exemplo, poderíamos escrever 3460 também como \(34,60\times10^2\), porque nesse caso teríamos dividido por 100 (\(10^2\)) e então devemos multiplicar por \(10^2\). Da mesma forma que poderíamos ter escrito como \(0,003460\times10^6\) e muitas outras maneiras. 
+
+\subsection{Operações com Notação Científica}
+
+Tivemos todo esse trabalho para definir e aprender a transformar números em Notação Científica por uma razão, e esse motivo é exatamente nos ajudar a resolver contas que poderiam ser mais complicadas sem esse conceito.
+
+Por exemplo, vamos pegar uma multiplicação entre 20.000.000 e 550.000. A princípio dá uma assustada, mas como ficaria em Notação Científica?
+
+\begin{equation}
+    20.000.000=20.000.000,0=2\times10^7
+\end{equation}
+
+e
+
+\begin{equation}
+    550.000= 550.000,0 = 5,5\times10^5
+\end{equation}
+
+então a multiplicação ficaria:
+
+\begin{equation}
+    (2\times10^7)\times(5,5\times10^5)=(2\times5,5)\times(10^7\times10^5)
+\end{equation}
+
+os parenteses aqui não fazem diferença, porque estamos falando de uma multiplicação de todos os números e a ordem que a realizamos não faz diferença, sendo mais um efeito de visualização e sugestão de que se deve multiplicar todos os números que são ``normais'' entre si e multiplicar todos os números que são 10 elevado à alguma coisa entre si, ficando:
+
+\begin{equation}
+    =11\times10^{12}
+\end{equation}
+
+Para aqueles que não entenderam o motivo de \(10^7\times10^5\) ter se tornado \(10^{12}\), recomendo fortemente reler o capítulo \ref{potenciacao}.
+
+Também podemos utilizar essa nova técnica para divisões também. Considere a divisão de 1,44 por 0,12, temos:
+
+\begin{equation}
+    1,44=144\times10^{-2}
+\end{equation}
+
+e
+
+\begin{equation}
+    0,12=12\times10^{-2}
+\end{equation}
+
+Então, ao invés de fazermos 1,44/0,12 podemos fazer:
+
+\begin{equation}
+    \frac{144}{12}\times\frac{10^{-2}}{10^{-2}}
+\end{equation}
+
+que resulta em:
+
+\begin{equation}
+    =12
+\end{equation}
+
+Que se torna bem mais fácil do que lidar com a divisão de decimais. 

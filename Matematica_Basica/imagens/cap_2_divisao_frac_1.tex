@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+  \foreach \i in {0,45,...,315} {
+    \fill[gray!60] (0,0) -- (\i:2) arc (\i:\i+45:2) -- cycle;
+  }
+  \draw[thick] (0,0) circle (2);
+  \foreach \i in {0,45,...,315} {
+    \draw[thick] (0,0) -- (\i:2);
+  }
+\end{tikzpicture}

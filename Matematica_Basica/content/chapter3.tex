@@ -1,0 +1,242 @@
+%Capitulo 3
+\chapter{Equações}
+\label{equacoes}
+
+\lettrine{A}{gora que entendemos como realizar operações entre os números}, podemos começar a aprofundar um pouco nas demais ferramentas matemáticas. Perceba que em nenhum momento discutimos o que são números, as diferenças que existem entre eles e de onde vieram, estamos mais interessados - nessa apostila - em revisar alguns conceitos vistos ao longo da vida. 
+
+Primeiramente, precisamos entender o que é uma equação e quais outros conceitos estão escondidos dentro desse tema. Até então, nós sabíamos o valor de todos os números que estavam sendo somados, subtraídos, multiplicados e/ou divididos, mas nem sempre teremos esse luxo. Em algumas situações, temos diversas informações e queremos encontrar uma outra que pode ser obtida realizando operações com os dados que temos. Por exemplo, o próprio resultado de uma soma era uma informação desconhecida até realizarmos a adição dos números. Outro exemplo seria: “tenho uma certa quantidade de maçãs e quero dividir por uma certa quantidade de pessoas, quantas maçãs cada pessoa receberá?”. 
+
+Essa quantidade desconhecida chamamos de \textbf{incógnita}, muitas vezes vista como \textbf{$x$} em diversas questões (\textit{“esse é o $x$ da questão”}). E para encontrarmos essas incógnitas, temos a ferramenta matemática chamada \textbf{equação}, na qual vamos realizar operações matemáticas com as informações/números/dados relevantes para o problema e encontrar um (ou mais) resultado(s).
+
+Temos diversos “graus” de equações (1° grau, 2° grau, 3° grau etc.). O \textbf{grau de uma equação} representa quantas soluções/resultados possíveis teremos para aquele mesmo problema. Fazendo uma analogia tosca para o cotidiano, sabemos que as vezes podemos \textit{resolver um pepino} de várias formas diferentes (sendo que ignorar a existência do problema é sempre uma solução...). Porém, como dito anteriormente, na matemática esse número de soluções é definido pelo grau da equação.
+
+Para essa apostila, vamos restringir nosso estudo somente às \textbf{equações de primeiro grau}.
+
+
+
+\section{Equações do primeiro grau}
+
+Toda essa introdução pomposa serve para abordar um tema relativamente simples, porém é necessária para que o aluno conheça e entenda um pouco mais sobre o que ele está estudando. As equações do 1° grau - primeiro grau - são as mais comuns em problemas cotidianos e, como vimos, possui uma única solução. Podemos representar uma equação do primeiro grau da seguinte maneira:
+
+\begin{equation}
+    a\times x+b=0
+\end{equation}
+
+Onde ``\textbf{a}'' é o coeficiente principal e pode assumir qualquer valor constante diferente de zero, e ``\textbf{b}'' é o termo independente e pode assumir qualquer valor constante, inclusive zero. Em outras palavras, “a” é o número que multiplica a incógnita, \textbf{x}, e “b” é o número que fica sempre sozinho. Vejamos alguns exemplos para ficar mais claro.
+
+\begin{tcolorbox}[title = IMPORTANTE]
+    Outro detalhe importante: como já somos todos adultos e crescidinhos, quando queremos escrever uma multiplicação entre dois números, A e B quaisquer, podemos simplesmente escrever A.B, sem o símbolo de ``\(\times\)'' no meio - ou AB se for um número e uma incógnita (ex.: 5x ao invés de \(5\times x\), até mesmo para não gerar confusão entre o símbolo da multiplicação com o símbolo da incógnita, ambos sendo X). \textbf{Daqui pra frente nesse capítulo utilizaremos essa notação mais elegante}.
+
+    \begin{equation}
+        ax+b=0
+    \end{equation}
+\end{tcolorbox}
+
+
+\begin{exemplo}
+    Considere a seguinte equação, com a = 5 e b = 10:
+
+    \begin{equation}
+        5 x + 10=0
+    \label{eq_mud_lado_1}
+    \end{equation}
+
+    Como isso é uma equação, e também uma \textbf{igualdade}, toda operação que eu realizar de um lado da igualdade eu também devo realizar do outro, para que a igualdade se mantenha.\\
+
+    Como assim? Vamos subtrair 10 dos dois lados da igualdade, veja:
+
+    \begin{equation}
+        5x+10-10=0-10
+    \end{equation}
+
+    Como eu realizei a operação dos dois lado, eu não altero o resultado final, apenas reescrevo a equação de outra maneira. Podemos pensar que é como se os dois ``-10 se cancelassem dos dois lados''. \\
+
+    Dessa forma, temos o seguinte:
+
+    \begin{equation}
+        5x=-10
+        \label{eq_mud_lado_2}
+    \end{equation}
+
+    Pois somando +10 com -10 o resultado é zero. Caso tenha dúvida nessa parte, retorne ao capítulo de soma e subtração. Dessa forma, fica sobrando o \(5x\) de um lado e -10 do outro.\\
+
+    Agora, vamos dividir por 5 dos dois lados, pois eu quero que a incógnita \textbf{x} fique sozinha (coitada). Temos:
+
+    \begin{equation}
+        \frac{5x}{5}=\frac{-10}{5}
+    \end{equation}
+
+    Como só temos coisas multiplicando e dividindo, podemos ``simplificar'' as frações. 
+
+    \begin{equation}
+        x=-2
+    \end{equation}
+
+    Pronto, daí temos o resultado da nosso equação, que é o valor da incógnita.
+
+    \label{ex_troca_lado}
+\end{exemplo}
+
+Esse processo de realizar a \textbf{mesma operação dos dois lados}, para manter a igualdade, muitas vezes (intuitivamente) nós simplificamos e chamamos de ``\textbf{passar para o outro lado}''. Por exemplo, no caso anterior poderíamos ter falado que ``passamos'' o ``+10'' para o outro lado da equação, \textbf{invertendo seu sinal}, e então se tornando ``-10''. Dessa forma, teríamos pulado da Equação \ref{eq_mud_lado_1} direto para a Equação \ref{eq_mud_lado_2}.
+
+Da mesma forma, poderíamos falar que o ``5'', que estava \textbf{multiplicando} a incógnita na Equação \ref{eq_mud_lado_2}, ``passou para o outro lado'' \textbf{dividindo} o ``-10''. Assim, também teríamos economizado uma etapa no processo. 
+
+Nesse momento, você aluno deve estar se perguntando, ``por que quando o 5 passa para o outro lado ele não se torna -5?''. Para entender, basta realizar o exemplo do mesmo jeito que foi realizado aqui, e percebemos que em momento nenhum existe uma operação de troca de sinal do 5.
+
+\begin{tcolorbox}[title = IMPORTANTE]
+    De maneira geral, podemos entender essas ``trocas de lado'' da equação como sendo a \textbf{inversão} do que o número estava antes fazendo do outro lado. Ou seja, se antes ele estava \textbf{somando}, ele passa \textbf{subtraindo} e vice versa, por isso ``inverte o sinal''. Se ele estava \textbf{multiplicando}, ele passa \textbf{dividindo} e vice versa.\\
+
+    É exatamente o mesmo processo de realizar as operações dos dois lados, como vimos no Exemplo \ref{ex_troca_lado}, porém de uma maneira mais simplificada para facilitar nossa vida e economizar tempo e papel.
+\end{tcolorbox}
+
+Vejamos mais exemplos.
+
+\begin{exemplo}
+    Considere a seguinte equação, com a = 1 e b = 2:
+
+    \begin{equation}
+        1x+2=0
+    \end{equation}
+
+    \textcolor{red}{Observação:} Quando temos o número 1 acompanhando a incógnita, costumamos escrever somente a incógnita sozinha mesmo (mas ele continua ali multiplicando no sigilo). 
+
+    \begin{equation}
+        x+2=0
+    \end{equation}
+    
+    Resolvendo agora da maneira mais simplificada, podemos passar o +2 para outro lado subtraindo, já que antes ele estava somando. Ficando:
+
+    \begin{equation}
+        x=-2
+    \end{equation}
+
+    E pronto, nossa equação está resolvida!
+\end{exemplo}
+
+\begin{exemplo}
+    Considere a seguinte equação, com a = -2 e b = 3:
+
+    \begin{equation}
+        -2x+3=0
+    \end{equation}
+
+    Aqui vamos resolver das duas maneiras, somente para efeito de visualização, já que teremos algo ``novo'.
+
+    \begin{enumerate}
+        \item \textbf{Primeira maneira:}
+
+        \begin{equation}
+            -2x+3-3=0-3
+        \end{equation}
+
+        \begin{equation}
+            -2x=-3
+        \end{equation}
+
+        \begin{equation}
+            \frac{-2x}{-2}=\frac{-3}{-2}
+        \end{equation}
+        
+        \begin{equation}
+            x=\frac{-3}{-2}
+        \end{equation}
+
+        Aqui nas divisões a nossa \textbf{regrinha de sinais} também funciona, como se fosse uma multiplicação. (-)/(-) = (+). Então:
+
+        \begin{equation}
+            x=\frac{3}{2}
+        \end{equation}
+
+        Poderíamos parar na fração, ou resolver para encontrar o valor decimal equivalente. Caso queiramos o valor decimal, basta dividir 3 por 2 e encontramos 1,5.
+
+        \item \textbf{Segunda maneira:}
+
+        Passamos o +3 para o outro lado invertendo o sinal:
+        
+        \begin{equation}
+            -2x=-3
+        \end{equation}
+
+        Aqui aprendemos uma coisa nova: podemos multiplicar os dois lados por ``-1'', e como estamos realizando o mesmo procedimento de cada lado da igualdade, não mudamos o valor final. Então:
+
+        \begin{equation}
+            +2x=+3
+        \end{equation}
+
+        Daí passamos o 2 para o outro lado dividindo, já que ele estava multiplicando, e temos:
+
+        \begin{equation}
+            x=\frac{3}{2}
+        \end{equation}
+
+        E encontramos exatamente o mesmo valor calculado da maneira anterior. 
+    \end{enumerate}
+\end{exemplo}
+
+\begin{tcolorbox}[title=IMPORTANTE]
+    Caro(a) aluno(a), não existe \textbf{jeito certo} de resolver um problema de matemática. Ao longo do nosso estudo, aprendemos \textbf{ferramentas} diferentes que nos abrem novas possibilidades de resolução de um mesmo problema.
+    
+    O jeito certo é o que faz mais sentido para você, e também o que você tenha mais facilidade.
+\end{tcolorbox}
+
+\begin{exemplo}
+    Considere a seguinte equação, com a = -1 e b = -4:
+
+    \begin{equation}
+        -x-4=0
+    \end{equation}
+
+    Passamos o -4 para o outro lado invertendo o sinal:
+    
+    \begin{equation}
+        -x=4
+    \end{equation}
+
+    Daí podemos multiplicar os dois lados por -1, temos:
+
+    \begin{equation}
+        x=-4
+    \end{equation}
+\end{exemplo}
+
+Para o nosso último exemplo, a equação começa não sendo igual a zero, mas sim igual a “y”. Com isso, temos que fazer algumas manipulações para chegar em uma equação parecida com o “padrão” que conhecemos. Esse processo é o que desejamos aprender nesse capítulo, a manipulação de equações com objetivo de encontrar o valor da incógnita no final. Vejamos:
+
+\textcolor{red}{Observação:} No próximo exemplo será utilizada a letra ``$y$'' como representante da incógnita. Isso será feito propositalmente para o(a) aluno(a) perceber que não faz diferença para o problema qual letra usamos. Temos que aprender a lidar com situações em que não aparece ``$x$'' como incógnita/variável.
+
+\begin{exemplo}
+    Considere a sequinte equação:
+
+    \begin{equation}
+        -2y+3=y
+    \end{equation}
+
+    Primeiro, vamos tentar transformá-la na forma que já conhecemos, \(ax+b=0\). Passando o ``y'' que estava somando ($y+0$) na direita para esquerda e invertendo seu sinal, e passando o +3 para o outro lado e invertendo seu sinal, temos:
+
+    \begin{equation}
+        -2y-y=-3
+    \end{equation}
+
+    \begin{equation}
+        -3y=-3
+    \end{equation}
+
+    Multiplicando por -1 dos dois lados:
+    
+    \begin{equation}
+        3y=3
+    \end{equation}
+
+    \begin{equation}
+        y=\frac{3}{3}=1
+    \end{equation}
+\end{exemplo}
+
+\begin{tcolorbox}[title=IMPORTANTE]
+    Quando temos operações \textbf{entre incógnitas}, podemos sempre pensar o seguinte: \\
+    
+    Imagine que cada incógnita é uma fruta dentro de uma cesta de frutas. Se eu quero saber quantas maçãs eu tenho, basta eu somar todas as frutas que são maçãs. Agora, se eu quisesse saber quantas bananas eu tenho, eu somaria... todas as bananas que existem dentro da cesta, exatamente. Perceba que é óbvio, e nem faz sentido, que tentar somar bananas com maçãs não irá me dar o valor total de somente 1 fruta.\\
+
+    Vale a mesma coisa para incógnitas dentro de uma equação. Se temos por exemplo: \(x+2x+y+5y+z=0\), faz sentido unir todas as incógnitas que são do mesmo tipo, ficando: \(3x+6y+z=0\).\\
+
+    Como resolvemos equações que tem mais de um tipo de incógnita? Isso é assunto para ser estudado no assunto de Sistemas Lineares em outra apostila.
+\end{tcolorbox}
