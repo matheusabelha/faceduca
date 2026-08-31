@@ -31,11 +31,9 @@ Este repositório serve como:
 - Ambiente de colaboração entre os membros responsáveis pela produção do conteúdo;
 - Histórico das alterações realizadas em cada disciplina.
 
-## Tecnologias utilizadas
+## Formato utilizado
 
 - LaTeX
-- Git
-- GitHub
 
 ## Contribuição
 
@@ -43,8 +41,4 @@ Caso faça parte da equipe de desenvolvimento do material, recomenda-se:
 
 1. Atualizar o repositório antes de iniciar alterações;
 2. Realizar commits com mensagens descritivas;
-3. Manter os arquivos temporários do LaTeX fora do controle de versão por meio do `.gitignore`.
-
-## Licença
-
-Salvo indicação em contrário, o material disponibilizado neste repositório destina-se exclusivamente às atividades do **Face Educa**.
+3. Manter os arquivos temporários do LaTeX fora do controle de versão por meio do .gitignore
