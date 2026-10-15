@@ -11,8 +11,8 @@ Cada disciplina possui sua própria pasta, contendo os arquivos-fonte em LaTeX, 
 Exemplo:
 
 ```
-FaceEduca/
-├── Matematica_Basica/
+faceduca/
+├── Matematica-Basica/
 ├── Física/
 ├── Química/
 ├── Biologia/
